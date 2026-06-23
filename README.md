@@ -6,6 +6,9 @@
 
 `index.html`을 브라우저에서 열면 바로 사용할 수 있습니다. 별도의 설치나 서버가 필요하지 않습니다.
 
+## 실행 링크
+https://nojaky.github.io/brewing-control-web/
+
 
 ## 원본 대비 변경점
 
