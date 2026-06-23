@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="필터 커피의 TDS와 추출 수율을 확인하는 브루잉 컨트롤 차트">
+  <title>브루잉 컨트롤 | 1985커피</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div>
+      <p class="brand">1985 COFFEE</p>
+      <h1>브루잉 컨트롤</h1>
+    </div>
+    <p class="version">로스터현 v1.0 Web</p>
+  </header>
+
+  <main>
+    <section class="chart-section" aria-labelledby="chart-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">BREWING CONTROL CHART</p>
+          <h2 id="chart-title">추출 결과</h2>
+        </div>
+        <div class="result-summary" aria-live="polite">
+          <div>
+            <span>TDS</span>
+            <strong id="tds-result">-</strong>
+          </div>
+          <div>
+            <span>추출 수율</span>
+            <strong id="yield-result">-</strong>
+          </div>
+          <p id="result-label">값을 입력하면 결과가 표시됩니다.</p>
+        </div>
+      </div>
+
+      <div class="chart-wrap">
+        <canvas id="brewing-chart" role="img" aria-label="TDS와 추출 수율을 나타내는 브루잉 컨트롤 차트"></canvas>
+      </div>
+      <div class="legend" aria-label="차트 범례">
+        <span><i class="legend-box ideal"></i>권장 추출 영역</span>
+        <span><i class="legend-line tds"></i>TDS</span>
+        <span><i class="legend-line yield"></i>추출 수율</span>
+      </div>
+    </section>
+
+    <section class="control-section" aria-labelledby="input-title">
+      <div class="input-panel">
+        <div class="section-heading compact">
+          <div>
+            <p class="eyebrow">MEASUREMENT</p>
+            <h2 id="input-title">측정값 입력</h2>
+          </div>
+          <button id="clear-inputs" class="text-button" type="button">입력 초기화</button>
+        </div>
+
+        <form id="brewing-form">
+          <label>
+            <span>추출된 커피 용량</span>
+            <span class="input-with-unit">
+              <input id="extracted-weight" type="number" inputmode="decimal" min="0.01" step="any" placeholder="예: 300" required>
+              <b>g</b>
+            </span>
+          </label>
+          <label>
+            <span>사용한 원두 용량</span>
+            <span class="input-with-unit">
+              <input id="coffee-weight" type="number" inputmode="decimal" min="0.01" step="any" placeholder="예: 18" required>
+              <b>g</b>
+            </span>
+          </label>
+          <label>
+            <span>TDS</span>
+            <span class="input-with-unit">
+              <input id="tds-percentage" type="number" inputmode="decimal" min="0.01" step="any" placeholder="예: 1.25" required>
+              <b>%</b>
+            </span>
+          </label>
+          <button class="primary-button" type="submit">결과 계산하기</button>
+        </form>
+        <p id="form-message" class="form-message" role="alert"></p>
+      </div>
+
+      <div class="log-panel">
+        <div class="section-heading compact">
+          <div>
+            <p class="eyebrow">HISTORY</p>
+            <h2>측정 기록</h2>
+          </div>
+          <div class="log-actions">
+            <button id="download-log" class="icon-button" type="button" title="CSV로 저장" aria-label="측정 기록을 CSV로 저장">↓</button>
+            <button id="clear-log" class="icon-button danger" type="button" title="기록 삭제" aria-label="측정 기록 전체 삭제">×</button>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>추출량</th>
+                <th>원두량</th>
+                <th>TDS</th>
+                <th>수율</th>
+                <th><span class="sr-only">불러오기</span></th>
+              </tr>
+            </thead>
+            <tbody id="log-body"></tbody>
+          </table>
+          <p id="empty-log" class="empty-log">아직 측정 기록이 없습니다.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>필터 커피 추출 결과를 확인하기 위한 도구입니다.</p>
+    <p>프로그램의 모든 지식 재산권은 1985커피 '로스터현'에 있습니다. 개인정보를 수집하지 않습니다.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
