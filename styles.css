@@ -76,6 +76,12 @@ h2 {
   font-size: 13px;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
 main {
   padding: 28px 0 40px;
 }
@@ -347,21 +353,16 @@ footer p {
 }
 
 .talk-button {
-  position: fixed;
-  right: 22px;
-  bottom: 22px;
-  z-index: 20;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  min-height: 48px;
-  padding: 0 17px 0 11px;
+  gap: 6px;
+  min-height: 36px;
+  padding: 0 12px 0 8px;
   border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 7px;
+  border-radius: 6px;
   background: #03c75a;
-  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.18);
   color: #ffffff;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 800;
   text-decoration: none;
 }
@@ -377,14 +378,14 @@ footer p {
 
 .talk-mark {
   display: grid;
-  width: 27px;
-  height: 27px;
+  width: 22px;
+  height: 22px;
   place-items: center;
   border-radius: 50%;
   background: #ffffff;
   color: #03c75a;
   font-family: Arial, sans-serif;
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 900;
 }
 
@@ -452,14 +453,21 @@ footer p {
     text-align: right;
   }
 
-  footer {
-    padding-bottom: 92px;
+  .header-actions {
+    gap: 8px;
   }
 
   .talk-button {
-    right: 12px;
-    bottom: 12px;
-    min-height: 46px;
-    padding-right: 14px;
+    min-height: 34px;
+    padding-right: 9px;
+  }
+
+  .talk-mark {
+    width: 20px;
+    height: 20px;
+  }
+
+  .talk-button span:last-child {
+    display: none;
   }
 }
