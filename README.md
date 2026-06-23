@@ -6,20 +6,6 @@
 
 `index.html`을 브라우저에서 열면 바로 사용할 수 있습니다. 별도의 설치나 서버가 필요하지 않습니다.
 
-## GitHub Pages 공개
-
-1. GitHub에서 새 공개 저장소를 만듭니다. 예: `brewing-control`
-2. 이 폴더 안의 `index.html`, `styles.css`, `app.js`를 저장소 최상위에 업로드합니다.
-3. 저장소의 `Settings` > `Pages`로 이동합니다.
-4. `Build and deployment`의 소스를 `Deploy from a branch`로 선택합니다.
-5. 브랜치는 `main`, 폴더는 `/(root)`를 선택하고 저장합니다.
-6. 잠시 후 표시되는 공개 주소를 네이버 블로그에 연결합니다.
-
-예상 주소:
-
-```text
-https://사용자이름.github.io/brewing-control/
-```
 
 ## 원본 대비 변경점
 
